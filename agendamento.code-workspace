@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "agendamento"
+		},
+		{
+			"name": "pacientes",
+			"path": "pacientes"
+		},
+		{
+			"name": "medicos",
+			"path": "medicos"
+		},
+		{
+			"path": "../../../../Downloads/gateway/gateway"
+		},
+		{
+			"path": "../../../../Downloads/eureka/eureka"
+		},
+		{
+			"name": "Avaliação back-end 2",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
