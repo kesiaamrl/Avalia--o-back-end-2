@@ -1,30 +1,30 @@
-package br.com.tech4me.medicos.model;
+package br.com.tech4me.pacientes.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import br.com.tech4me.medicos.shared.MedicoCompletoDto;
+import br.com.tech4me.pacientes.shared.PacientesCompletoDto;
 
-@Document("medicos")
-public class Medicos {
+@Document("pacientes")
+public class Pacientes {
     @Id
     
     private String id;
     private String nome;
-    private String crm;
+    private String cpf;
     private String endereco;
-    private Especialidade especialidade;
+    private int idade;
 
-    public Medicos(){}
+    public Pacientes (){}
 
-    public Medicos(MedicoCompletoDto dto){
+    public Pacientes (PacientesCompletoDto dto){
         this.id=dto.id();
         this.nome=dto.nome();
-        this.crm=dto.crm();
+        this.cpf=dto.cpf();
         this.endereco=dto.endereco();
-        this.especialidade=dto.especialidade();
-
+        this.idade=dto.idade();
     }
+
 
     public String getId() {
         return id;
@@ -38,11 +38,11 @@ public class Medicos {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public String getCrm() {
-        return crm;
+    public String getCpf() {
+        return cpf;
     }
-    public void setCrm(String crm) {
-        this.crm = crm;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
     public String getEndereco() {
         return endereco;
@@ -50,10 +50,10 @@ public class Medicos {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
-    public Especialidade getEspecialidade() {
-        return especialidade;
+    public int getIdade() {
+        return idade;
     }
-    public void setEspecialidade(Especialidade especialidade) {
-        this.especialidade = especialidade;
+    public void setIdade(int idade) {
+        this.idade = idade;
     }
 }

@@ -16,13 +16,10 @@
 		},
 		{
 			"path": "../../../../Downloads/eureka/eureka"
-		},
-		{
-			"name": "Avaliação back-end 2",
-			"path": "."
 		}
 	],
 	"settings": {
-		"java.compile.nullAnalysis.mode": "automatic"
+		"java.compile.nullAnalysis.mode": "automatic",
+		"java.configuration.updateBuildConfiguration": "interactive"
 	}
 }
