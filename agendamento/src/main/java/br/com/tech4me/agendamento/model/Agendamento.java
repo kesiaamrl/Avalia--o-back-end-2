@@ -1,6 +1,5 @@
 package br.com.tech4me.agendamento.model;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.Id;
@@ -15,8 +14,7 @@ public class Agendamento {
 private String id;
 private String idMedico;
 private String idPaciente;
-private LocalDate data;
-private LocalDateTime hora;
+private LocalDateTime data;
 
 public Agendamento(){}
 
@@ -25,7 +23,6 @@ public Agendamento(AgendamentoCompletoDto dto){
     this.idMedico=dto.idMedico();
     this.idPaciente=dto.idPaciente();
     this.data=dto.data();
-    this.hora=dto.hora();
 }
 
 public String getId() {
@@ -46,16 +43,10 @@ public String getIdPaciente() {
 public void setIdPaciente(String idPaciente) {
     this.idPaciente = idPaciente;
 }
-public LocalDate getData() {
+public LocalDateTime getData() {
     return data;
 }
-public void setData(LocalDate data) {
+public void setData(LocalDateTime data) {
     this.data = data;
-}
-public LocalDateTime getHora() {
-    return hora;
-}
-public void setHora(LocalDateTime hora) {
-    this.hora = hora;
 }
 }

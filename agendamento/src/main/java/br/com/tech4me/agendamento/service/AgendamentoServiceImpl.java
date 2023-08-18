@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import br.com.tech4me.agendamento.httpClient.MedicosClient;
 import br.com.tech4me.agendamento.httpClient.PacientesClient;
 import br.com.tech4me.agendamento.model.Agendamento;
-import br.com.tech4me.agendamento.model.Medicos;
 import br.com.tech4me.agendamento.repository.AgendamentoRepository;
 import br.com.tech4me.agendamento.shared.AgendamentoCompletoDto;
 import br.com.tech4me.agendamento.shared.AgendamentoDto;
@@ -28,7 +27,7 @@ public class AgendamentoServiceImpl implements AgendamentoService {
     public List<AgendamentoDto> obterTodos(){
         return repositorio.findAll()
         .stream()
-        .map(p-> new AgendamentoDto(p.getId(), p.getData(), p.getHora()))
+        .map(p-> new AgendamentoDto(p.getId(), p.getData()))
         .toList();
     }
     
@@ -39,8 +38,7 @@ public class AgendamentoServiceImpl implements AgendamentoService {
         if(agendamento.isPresent()){
             return Optional.of(new AgendamentoCompletoDto(agendamento.get().getId(), agendamento.get().getIdMedico(),
         agendamento.get().getIdPaciente(),
-        agendamento.get().getData(),
-        agendamento.get().getHora()));
+        agendamento.get().getData()));
         } else{
             return Optional.empty();
         }
@@ -55,8 +53,7 @@ public class AgendamentoServiceImpl implements AgendamentoService {
       return new AgendamentoCompletoDto(agendamento.getId(), 
       agendamento.getIdMedico(),
       agendamento.getIdPaciente(),
-      agendamento.getData(),
-      agendamento.getHora());
+      agendamento.getData());
     }
 
     @Override
@@ -70,8 +67,7 @@ public class AgendamentoServiceImpl implements AgendamentoService {
         return new AgendamentoCompletoDto(agendamentoAtualizar.getId(),
          agendamentoAtualizar.getIdMedico(),
       agendamentoAtualizar.getIdPaciente(),
-      agendamentoAtualizar.getData(),
-      agendamentoAtualizar.getHora());
+      agendamentoAtualizar.getData());
        } else{
         return null;
        }
