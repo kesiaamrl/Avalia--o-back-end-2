@@ -12,10 +12,14 @@
 			"path": "medicos"
 		},
 		{
-			"path": "../../../../Downloads/gateway/gateway"
+			"path": "eureka"
 		},
 		{
-			"path": "../../../../Downloads/eureka/eureka"
+			"path": "gateway"
+		},
+		{
+			"name": "configserver",
+			"path": "configserver"
 		}
 	],
 	"settings": {
