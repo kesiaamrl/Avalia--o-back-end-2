@@ -16,6 +16,10 @@
 		},
 		{
 			"path": "../../../../Downloads/eureka/eureka"
+		},
+		{
+			"name": "config-server",
+			"path": "config-server"
 		}
 	],
 	"settings": {
