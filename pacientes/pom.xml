@@ -15,8 +15,19 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
+<<<<<<< HEAD
 		<spring-cloud.version>2022.0.4</spring-cloud.version>
 	</properties><dependencies>
+=======
+		<spring-cloud.version>2022.0.3</spring-cloud.version>
+	</properties>
+<dependencies>
+        <dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+			<version>4.0.2</version>
+		</dependency>
+>>>>>>> 7901b65c56dab168d672a58a251d7cc5e81ee328
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
