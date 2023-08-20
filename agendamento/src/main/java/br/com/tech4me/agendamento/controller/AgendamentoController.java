@@ -43,7 +43,7 @@ public class AgendamentoController {
     }
 
     @PostMapping
-    private ResponseEntity<AgendamentoCompletoDto> cadastrarAgendamaento(@RequestBody AgendamentoCompletoDto agendamento){
+    private ResponseEntity<AgendamentoCompletoDto> cadastrarAgendamento(@RequestBody AgendamentoCompletoDto agendamento){
         return new ResponseEntity<>(servico.cadastrar(agendamento), HttpStatus.CREATED);
     }
 

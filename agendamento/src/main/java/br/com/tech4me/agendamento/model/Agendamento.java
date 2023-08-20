@@ -7,6 +7,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import br.com.tech4me.agendamento.shared.AgendamentoCompletoDto;
 
+import java.time.format.DateTimeFormatter;
+
 @Document("agendamento")
 public class Agendamento {
     @Id
@@ -15,6 +17,7 @@ private String id;
 private String idMedico;
 private String idPaciente;
 private LocalDateTime data;
+
 
 public Agendamento(){}
 
