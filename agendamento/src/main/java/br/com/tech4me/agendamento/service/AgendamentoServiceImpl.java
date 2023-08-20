@@ -56,7 +56,7 @@ public class AgendamentoServiceImpl implements AgendamentoService {
       agendamento.getIdPaciente(),
       agendamento.getData());
       }
-    }
+    
 
     @Override
     public AgendamentoCompletoDto atualizarPorId(String id, AgendamentoCompletoDto dto) {
@@ -79,5 +79,5 @@ public class AgendamentoServiceImpl implements AgendamentoService {
     public void excluirPorId(String id) {
        repositorio.deleteById(id);
     }
-}
 
+}
