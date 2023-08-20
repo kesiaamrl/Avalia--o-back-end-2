@@ -1,5 +1,6 @@
 package br.com.tech4me.agendamento.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -54,6 +55,7 @@ public class AgendamentoServiceImpl implements AgendamentoService {
       agendamento.getIdMedico(),
       agendamento.getIdPaciente(),
       agendamento.getData());
+      }
     }
 
     @Override
