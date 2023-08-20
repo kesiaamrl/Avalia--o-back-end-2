@@ -4,30 +4,19 @@
 			"path": "agendamento"
 		},
 		{
-			"name": "pacientes",
-			"path": "pacientes"
-		},
-		{
-			"name": "medicos",
-			"path": "medicos"
+			"path": "config-server"
 		},
 		{
 			"path": "eureka"
 		},
 		{
-<<<<<<< HEAD
-			"path": "../../../../Downloads/eureka/eureka"
-		},
-		{
-			"name": "config-server",
-			"path": "config-server"
-=======
 			"path": "gateway"
 		},
 		{
-			"name": "configserver",
-			"path": "configserver"
->>>>>>> 7901b65c56dab168d672a58a251d7cc5e81ee328
+			"path": "medicos"
+		},
+		{
+			"path": "pacientes"
 		}
 	],
 	"settings": {
