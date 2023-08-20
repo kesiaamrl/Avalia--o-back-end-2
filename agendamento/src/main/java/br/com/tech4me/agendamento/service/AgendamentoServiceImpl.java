@@ -10,9 +10,11 @@ import org.springframework.stereotype.Service;
 import br.com.tech4me.agendamento.httpClient.MedicosClient;
 import br.com.tech4me.agendamento.httpClient.PacientesClient;
 import br.com.tech4me.agendamento.model.Agendamento;
+import br.com.tech4me.agendamento.model.Pacientes;
 import br.com.tech4me.agendamento.repository.AgendamentoRepository;
 import br.com.tech4me.agendamento.shared.AgendamentoCompletoDto;
 import br.com.tech4me.agendamento.shared.AgendamentoDto;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 
 @Service
 public class AgendamentoServiceImpl implements AgendamentoService {
@@ -32,19 +34,31 @@ public class AgendamentoServiceImpl implements AgendamentoService {
         .toList();
     }
     
+    @CircuitBreaker(name="obterPacientes", fallbackMethod = "fallbackObterPorId")   
     @Override
     public Optional<AgendamentoCompletoDto> obterPorId(String id){
         Optional<Agendamento> agendamento = repositorio.findById(id);
 
         if(agendamento.isPresent()){
-            return Optional.of(new AgendamentoCompletoDto(agendamento.get().getId(), agendamento.get().getIdMedico(),
-        agendamento.get().getIdPaciente(),
-        agendamento.get().getData()));
+            Pacientes pacientes = pacientesClient.obterPacientes(agendamento.get().getIdPaciente());
+            AgendamentoDto agendamentoComPaciente = new AgendamentoDto(agendamento.get().getId(), pacientes, agendamento.get().getData());
+            return Optional.of(agendamentoComPaciente);
+
         } else{
             return Optional.empty();
         }
     }
     
+    public Optional<AgendamentoDto> fallbackObterPorId(String id, Exception e){
+        Optional<Agendamento> agendamento = repositorio.findById(id);
+
+        if(agendamento.isPresent()){
+            AgendamentoDto agendamentoComPaciente = new AgendamentoDto(agendamento.get().getId(), null, agendamento.get().getData());
+            return Optional.of(agendamentoComPaciente);
+        } else{
+            return Optional.empty();
+        }
+    }
 
     @Override
     public AgendamentoCompletoDto cadastrar(AgendamentoCompletoDto dto) {

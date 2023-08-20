@@ -18,8 +18,6 @@ private String idMedico;
 private String idPaciente;
 private LocalDateTime data;
 
-DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-String agoraFormatado = data.format(formatter);
 
 public Agendamento(){}
 
