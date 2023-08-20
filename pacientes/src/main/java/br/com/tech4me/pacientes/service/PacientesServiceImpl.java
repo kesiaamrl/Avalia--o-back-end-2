@@ -22,7 +22,7 @@ public class PacientesServiceImpl implements PacientesService {
     public List<PacientesDto> obterTodos() {
         return repositorio.findAll()
             .stream()
-            .map(p -> new PacientesDto(p.getNome(), p.getIdade()))
+            .map(p -> new PacientesDto(p.getNome(), p.getTelefone()))
             .toList();
     }
 
@@ -35,7 +35,7 @@ public class PacientesServiceImpl implements PacientesService {
                 paciente.get().getNome(),
                 paciente.get().getCpf(),
                 paciente.get().getEndereco(),
-                paciente.get().getIdade()));
+                paciente.get().getTelefone()));
         } else {
             return Optional.empty();
         }
@@ -50,7 +50,7 @@ public class PacientesServiceImpl implements PacientesService {
             paciente.getNome(),
             paciente.getCpf(),
             paciente.getEndereco(),
-            paciente.getIdade());
+            paciente.getTelefone());
     }
 
     @Override
@@ -65,7 +65,7 @@ public class PacientesServiceImpl implements PacientesService {
                 pacientesAtualizar.getNome(),
                 pacientesAtualizar.getCpf(),
                 pacientesAtualizar.getEndereco(),
-                pacientesAtualizar.getIdade());
+                pacientesAtualizar.getTelefone());
         } else {
             return null;
         }

@@ -27,13 +27,13 @@ public class AgendamentoController {
     private AgendamentoService servico;
 
     @GetMapping
-    private ResponseEntity<List<AgendamentoDto>> obterAgendamentos(){
+    private ResponseEntity<List<AgendamentoCompletoDto>> obterAgendamentos(){
         return new ResponseEntity<>(servico.obterTodos(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    private ResponseEntity<AgendamentoCompletoDto> obterAgendamentosPorId(@PathVariable String id){
-        Optional<AgendamentoCompletoDto> agendamento = servico.obterPorId(id);
+    private ResponseEntity<AgendamentoDto> obterAgendamentosPorId(@PathVariable String id){
+        Optional<AgendamentoDto> agendamento = servico.obterAgendamentoPorId(id);
 
         if(agendamento.isPresent()){
             return new ResponseEntity<>(agendamento.get(), HttpStatus.OK);

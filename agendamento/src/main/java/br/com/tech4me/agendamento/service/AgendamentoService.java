@@ -7,8 +7,8 @@ import br.com.tech4me.agendamento.shared.AgendamentoCompletoDto;
 import br.com.tech4me.agendamento.shared.AgendamentoDto;
 
 public interface AgendamentoService {
-    List<AgendamentoDto> obterTodos();
-    Optional<AgendamentoCompletoDto> obterPorId(String id);
+    List<AgendamentoCompletoDto> obterTodos();
+    Optional<AgendamentoDto> obterAgendamentoPorId(String id);
     AgendamentoCompletoDto cadastrar(AgendamentoCompletoDto dto);
     AgendamentoCompletoDto atualizarPorId(String id, AgendamentoCompletoDto dto);
     void excluirPorId(String id);

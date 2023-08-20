@@ -13,7 +13,7 @@ public class Pacientes {
     private String nome;
     private String cpf;
     private String endereco;
-    private int idade;
+    private String telefone;
 
     public Pacientes (){}
 
@@ -22,7 +22,7 @@ public class Pacientes {
         this.nome=dto.nome();
         this.cpf=dto.cpf();
         this.endereco=dto.endereco();
-        this.idade=dto.idade();
+        this.telefone=dto.telefone();
     }
 
 
@@ -50,10 +50,10 @@ public class Pacientes {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
-    public int getIdade() {
-        return idade;
+    public String getTelefone() {
+        return telefone;
     }
-    public void setIdade(int idade) {
-        this.idade = idade;
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 }
